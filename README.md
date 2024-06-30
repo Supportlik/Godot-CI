@@ -1,7 +1,7 @@
 # Links:
 
 - GitHub: https://github.com/Supportlik/Godot-CI
-- DockerHub: https://hub.docker.com/repository/docker/supportlik/godot-ci
+- DockerHub: https://hub.docker.com/r/supportlik/godot-ci
 
 # Tags:
 
