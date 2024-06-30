@@ -1,6 +1,7 @@
 # Links:
 
 - GitHub: https://github.com/Supportlik/Godot-CI
+- DockerHub: https://hub.docker.com/repository/docker/supportlik/godot-ci
 
 # Tags:
 
@@ -15,11 +16,11 @@ original Mono image and tailored to support diverse CI needs for automatic build
 ## Features
 
 - **Pre-configured Environment**: Set up for Godot 4.2.1-mono on Ubuntu Jammy.
-- **Export Templates**: Installed export templates for multiple platforms.
-- **Documented Environment Variables**: Clearly documented for ease of use.
-- **Android SDK**: Includes Android SDK version 33.
-- **Multi-Platform Export**: Ready to export for Windows, Linux, and Android.
-- **Pre-configured Android Debug Keys**: Android debug keys are already created for debug builds.
+  - **Export Templates**: Installed export templates for multiple platforms.
+  - **Documented Environment Variables**: Clearly documented for ease of use.
+  - **Android SDK**: Includes Android SDK version 33.
+  - **Multi-Platform Export**: Ready to export for Windows, Linux, and Android.
+  - **Pre-configured Android Debug Keys**: Android debug keys are already created for debug builds.
 
 ## Prerequisites
 
@@ -33,41 +34,41 @@ original Mono image and tailored to support diverse CI needs for automatic build
     cd godot-ci
     ```
 
-2. **Build the Docker Image**:
-   Build the Docker image which includes Godot, Mono, and the necessary export templates.
-    ```sh
-    docker build -t supportlik/godot-ci .
-    ```
+   2. **Build the Docker Image**:
+      Build the Docker image which includes Godot, Mono, and the necessary export templates.
+       ```sh
+       docker build -t supportlik/godot-ci .
+       ```
 
-3. **Environment Variables**:
-   The Dockerfile and CI scripts come with the following environment variables for customization:
+   3. **Environment Variables**:
+      The Dockerfile and CI scripts come with the following environment variables for customization:
 
-   **Note:** The Android debug keys are pre-configured and can be used directly for debug builds.
+      **Note:** The Android debug keys are pre-configured and can be used directly for debug builds.
 
-   ### Android Debug Key Configuration
-    ```sh
-    ENV GODOT_ANDROID_KEYSTORE_DEBUG_PATH="/root/debug.keystore" # Destination of the debug keystore
-    ENV GODOT_ANDROID_KEYSTORE_DEBUG_USER="androiddebugkey" # keystore user
-    ENV GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD="android" # keystore password
-    ```
+      ### Android Debug Key Configuration
+       ```sh
+       ENV GODOT_ANDROID_KEYSTORE_DEBUG_PATH="/root/debug.keystore" # Destination of the debug keystore
+       ENV GODOT_ANDROID_KEYSTORE_DEBUG_USER="androiddebugkey" # keystore user
+       ENV GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD="android" # keystore password
+       ```
 
-   ### Export Configuration
-    ```sh
-    ENV EXPORT_NAME="my-game"                # Name of the exported game
-    ENV EXPORT_VERSION="v0.0.1"              # Version of the exported game
-    ENV EXPORT_EXTENSION=".exe"              # File extension for the export
-    ENV EXPORT_TEMPLATE="Windows Desktop"    # Export template to use
-    ```
+      ### Export Configuration
+       ```sh
+       ENV EXPORT_NAME="my-game"                # Name of the exported game
+       ENV EXPORT_VERSION="v0.0.1"              # Version of the exported game
+       ENV EXPORT_EXTENSION=".exe"              # File extension for the export
+       ENV EXPORT_TEMPLATE="Windows Desktop"    # Export template to use
+       ```
 
-   ### Export Paths
-    ```sh
-    ENV PROJECT_PATH="/godot"                # Path where your Godot project is located in the container
-    ENV BUILD_PATH="/build"                  # Path where the exported builds will be saved in the container
-    ```
+      ### Export Paths
+       ```sh
+       ENV PROJECT_PATH="/godot"                # Path where your Godot project is located in the container
+       ENV BUILD_PATH="/build"                  # Path where the exported builds will be saved in the container
+       ```
 
-4. **Set Up Export Templates in Godot**:
-   Ensure you have configured export templates in your Godot project. These templates can be addressed with the
-   corresponding `EXPORT_TEMPLATE` environment variable when running the container.
+   4. **Set Up Export Templates in Godot**:
+      Ensure you have configured export templates in your Godot project. These templates can be addressed with the
+      corresponding `EXPORT_TEMPLATE` environment variable when running the container.
 
 ## Example Run without selfbuilding provided through Docker Hub
 
