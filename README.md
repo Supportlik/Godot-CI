@@ -1,7 +1,10 @@
-Tags:
+# Links:
 
-Godot-v4.2.1-mono: `latest`
+- GitHub: https://github.com/Supportlik/Godot-CI
 
+# Tags:
+
+- Godot-v4.2.1-mono: `latest`
 
 # Godot CI with C# Mono Support
 
