@@ -3,7 +3,7 @@ LABEL author="michael@bortlik.io"
 
 USER root
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends \
+RUN apt-get -qq update && apt-get -qq upgrade -y && apt-get -qq install -y --no-install-recommends \
     ca-certificates \
     git \
     git-lfs \
