@@ -49,6 +49,7 @@ RUN wget -q https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}${SUBDIR
     && mv /usr/local/bin/Godot_v${GODOT_VERSION}-${RELEASE_NAME}_${GODOT_PLATFORM_BINARY} /usr/local/bin/godot \
     && unzip -q Godot_v${GODOT_VERSION}-${RELEASE_NAME}_export_templates.tpz \
     && mv templates/* ~/.local/share/godot/export_templates/${GODOT_VERSION}.${RELEASE_NAME_TEMPLATE} \
+    && chmod +r ~/.local/share/godot/export_templates/${GODOT_VERSION}.${RELEASE_NAME_TEMPLATE} \
     && rm -f Godot_v${GODOT_VERSION}-${RELEASE_NAME}_export_templates.tpz Godot_v${GODOT_VERSION}-${RELEASE_NAME}_${GODOT_PLATFORM}.zip
 
 
